@@ -1,0 +1,230 @@
+<html>
+    <head>
+        <style>
+            .logo {
+                height: 90px;
+                width: 120px;
+                position: absolute;
+                top: 15px;
+                left: 30px;
+            }
+            body {
+                background-color: 313639;
+            }
+            .topnav {
+                overflow: hidden;
+                background-color: 313639;
+                position: relative;
+                top: 15px; 
+                right: 30px;
+            }
+            .topnav a {
+                float: right;
+                color:white;
+                text-align: center;
+                right: 14px;
+                padding: 14px 20px 14px;
+                text-decoration: none;
+                font-size: 20px;
+                font-family: "Arial", sans-serif;
+            }
+            .topnav a:hover {
+                background-color: red;
+                color:white;
+            }
+            .topnav a.active {
+                background-color: 313639;
+                color: red;
+            }
+            ::-webkit-scrollbar {
+                width: 10px;
+            }
+            ::-webkit-scrollbar-track {
+                background: #f1f1f1; 
+            }
+            ::-webkit-scrollbar-thumb {
+                background: #888; 
+            }
+            ::-webkit-scrollbar-thumb:hover {
+                background: red; 
+            }
+            #tableVertical {
+                border-left: 3px solid red;
+                height: 450px;
+                position: absolute;
+                left: 400px;
+                top: 160px;
+            }
+            #tableHorizontal {
+                width: 400px;
+                height: 3px;
+                position: absolute;
+                left: 200px;
+                top: 150px;
+                background-color:red;
+                border-width:0px;
+            }
+            #ingredientTitle {
+                position:absolute;
+                top: 110px;
+                left: 320px;
+                color: white;
+                font-size: 30px;
+                font-family: "Arial", sans-serif;
+            }
+            #ingredientOutput {
+                position: absolute;
+                top: 180px;
+                left: 200px;
+                color: white;
+                font-size: 20px;
+                font-family: "Arial", sans-serif;
+            }
+            #amountOutput {
+                position: absolute;
+                top: 180px;
+                left: 430px;
+                color: white;
+                font-size: 20px;
+                font-family: "Arial", sans-serif;
+            }
+            #fetchButton {
+                background-color: white;
+                position:absolute;
+                top: 650px;
+                left: 353px;
+                border-radius: 10%;
+                padding: 10px;
+                border-color: white;        
+            }
+            #fetchlistButtonText {
+                color: red;
+                font-family: "Arial", sans-serif;
+            }
+            #map {
+                height: 400px;
+                width: 400px;
+                position: absolute;
+                right: 200px;
+                top: 200px;
+            }
+            #mapTitle {
+                color: white;
+                font-size: 30px;
+                font-family: "Arial", sans-serif;
+                position: absolute;
+                top: 150px;
+                right: 290px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="topnav">
+            <a class="active" href="groceryList.html">Grocery List</a>
+            <a href="">Challenges</a>
+            <a href="recipes.html">Recipes</a>
+            <a href="project.html">Home</a>
+        </div>
+        <div class="navbarImg"></div>
+            <img class="logo" src="chile-black.png" alt="Logo"> <!--The logo in the top left corner of the page-->
+        </div>
+
+        <hr id="tableHorizontal"> 
+        <div id="tableVertical"></div> 
+        <header id="ingredientTitle">Ingredients:</header>
+        <div id="fetchButton">
+            <button id="fetchlistButtonText" type="button" onclick="addtolist();">Fetch List</button>
+        </div>
+        <ul id="ingredientOutput"></ul>
+        <ul id="amountOutput"></ul>
+        <div id="map"></div>
+        <header id="mapTitle">Nearby Stores:</header>
+    </body>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMFO8x6w1kvy0PrE7UgYOzQgwje3V6NyI&callback=initMap&v=weekly"async></script>
+    <script>
+        function initMap() {
+
+            const center = { lat: 43.739988, lng: -79.515395 };
+            const doubleC = { lat: 43.725705, lng: -79.341886};
+            const doubleT = { lat: 43.657159, lng: -79.401286};
+            const luckyMoose = { lat: 43.653460, lng: -79.394226};
+
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 10,
+                center: center,
+            });
+        
+            const marker = new google.maps.Marker({
+                position: doubleC,
+                map: map,
+                });
+            const marker2 = new google.maps.Marker({
+                position: doubleT,
+                map: map,
+                });
+            const marker3 = new google.maps.Marker({
+                position: luckyMoose,
+                map: map,
+                });
+            }
+            
+        var sessionStringingredientKimchi = sessionStorage.getItem('KimchiIngredient');
+        var sessionStringamountKimchi = sessionStorage.getItem('KimchiAmount')
+        var ingredientKimchi = JSON.parse(sessionStringingredientKimchi);
+        var amountKimchi = JSON.parse(sessionStringamountKimchi);
+
+        var sessionStringingredientTTK = sessionStorage.getItem('TTKIngredient');
+        var sessionStringamountTTK = sessionStorage.getItem('TTKAmount')
+
+        var ingredientTTK = JSON.parse(sessionStringingredientTTK);
+        var amountTTK = JSON.parse(sessionStringamountTTK);
+
+        console.log(ingredientKimchi);
+        console.log(amountKimchi);
+
+        function addtolist() {
+                console.log("hello");
+                if (Array.isArray(ingredientKimchi)) {
+                    for (let i = 0; i < ingredientKimchi.length; i++) {
+                        console.log("got here");
+                        var li = document.createElement("li"); /*I commented the loops below, bassically the same code just with different ingredient and amount arrays*/
+                        var t = document.createTextNode(ingredientKimchi[i]);
+                        item = document.getElementById("ingredientOutput");
+                        li.appendChild(t);
+                        console.log(item);
+                        item.appendChild(li)
+                    }
+                    for (let i = 0; i < amountKimchi.length; i++) {
+                        console.log("got here");
+                        var li = document.createElement("li");
+                        var t = document.createTextNode(amountKimchi[i]);
+                        item = document.getElementById("amountOutput");
+                        li.appendChild(t);
+                        console.log(item);
+                        item.appendChild(li)
+                    }
+                }
+                if (Array.isArray(ingredientTTK)) {
+                    for (let i = 0; i < ingredientTTK.length; i++) {
+                        console.log("got here");
+                        var li = document.createElement("li"); /*I commented the loops below, bassically the same code just with different ingredient and amount arrays*/
+                        var t = document.createTextNode(ingredientTTK[i]);
+                        item = document.getElementById("ingredientOutput");
+                        li.appendChild(t);
+                        console.log(item);
+                        item.appendChild(li)
+                    }
+                    for (let i = 0; i < amountTTK.length; i++) {
+                        console.log("got here");
+                        var li = document.createElement("li");
+                        var t = document.createTextNode(amountTTK[i]);
+                        item = document.getElementById("amountOutput");
+                        li.appendChild(t);
+                        console.log(item);
+                        item.appendChild(li)
+                    }
+                }
+            }
+    </script>
+</html>

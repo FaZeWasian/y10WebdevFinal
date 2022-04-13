@@ -1,0 +1,225 @@
+<head>
+    <style>
+        #title {
+            color:white;
+            width: 703px;
+            position: absolute;
+            left: 640px;
+            top: 120px;
+            font-family: "Arial", sans-serif;
+            font-size: 50px;
+        }
+        body {
+            background-color: 313639;
+            margin-bottom: 100px;
+        }
+        .topnav {
+            overflow: hidden;
+            background-color: 313639;
+            position: relative;
+            top: 15px; 
+            right: 30px;
+        }
+        .topnav a {
+            float: right;
+            color:white;
+            text-align: center;
+            right: 14px;
+            padding: 14px 20px 14px;
+            text-decoration: none;
+            font-size: 20px;
+            font-family: "Arial", sans-serif;
+        }
+        .topnav a:hover {
+            background-color: red;
+            color:white;
+        }
+        .topnav a.active {
+            background-color: 313639;
+            color: red;
+        }
+        .logo {
+                height: 90px;
+                width: 120px;
+                position: absolute;
+                top: 15px;
+                left: 30px;
+        }
+        #recipeImage1 {
+            height: 200px;
+            width: 200px;
+            background-color: white;
+            position: absolute;
+            top: 225px;
+            left: 150px;
+            border-radius: 10%;
+        }
+        #recipeImage2 {
+            height: 200px;
+            width: 200px;
+            background-color: white;
+            position: absolute;
+            top: 225px;
+            right: 150px;
+            border-radius: 10%;
+        }
+        #recipeImage3 {
+            height: 200px;
+            width: 200px;
+            background-color: white;
+            position: absolute;
+            top: 225px;
+            left: 620px;
+            border-radius: 10%;
+        }
+        #recipeImage4 {
+            height: 200px;
+            width: 200px;
+            background-color: white;
+            position: absolute;
+            top: 600px;
+            left: 150px;
+            border-radius: 10%;
+        }
+        #recipeImage5 {
+            height: 200px;
+            width: 200px;
+            background-color: white;
+            position: absolute;
+            top: 600px;
+            right: 150px;
+            border-radius: 10%;
+        }
+        #recipeImage6 {
+            height: 200px;
+            width: 200px;
+            background-color: white;
+            position: absolute;
+            top: 600px;
+            left: 620px;
+            border-radius: 10%;
+        }
+        #recipeText1 {
+            width: 200px;
+            position: absolute;
+            top: 440px;
+            left: 150px;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #recipeText2 {
+            width: 200px;
+            position: absolute;
+            top: 440px;
+            right: 150px;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #recipeText3 {
+            width: 200px;
+            position: absolute;
+            top: 440px;
+            left: 620px;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #recipeText4 {
+            width: 200px;
+            position: absolute;
+            top: 820px;
+            left: 150px;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #recipeText5 {
+            width: 200px;
+            position: absolute;
+            top: 820px;
+            right: 150px;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #recipeText6 {
+            width: 200px;
+            position: absolute;
+            top: 820px;
+            left: 620px;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-bottom: 100px;
+        }
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888; 
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: red; 
+        }
+        a:link {
+            text-decoration: none;
+            color:white;
+            font-family: Arial, sans-serif;
+        }
+        a:visited {
+            text-decoration: none;
+            color:white;
+            font-family: Arial, sans-serif;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="topnav">
+        <a href="groceryList.html">Grocery List</a>
+        <a href="">Challenges</a>
+        <a class = "active" href="recipes.html">Recipes</a>
+        <a href="project.html">Home</a>
+    </div>
+
+    <div class="navbarImg"></div>
+            <img class="logo" src="chile-black.png" alt="Logo"> <!--The logo in the top left corner of the page-->
+    </div>
+
+    <header id=title>Recipes</header>
+
+
+    <img src="kimchi.jpeg" alt="Kimchi" id="recipeImage1">
+    <img src="tteokbokki.jpeg" alt="Tteokbokki" id="recipeImage3">
+    <div id="recipeImage2"></div>
+    <div id="recipeImage4"></div>
+    <div id="recipeImage5"></div>
+    <div id="recipeImage6"></div>
+
+    <div id="recipeText1">
+        <a href="individualrecipe.html">Here is a stock write up for a short description of a recipe. Click here for more.</a>
+    </div>
+    <div id="recipeText2">
+        <a href="">Here is a stock write up for a short description of a recipe. Click here for more.</a>
+    </div>
+    <div id="recipeText3">
+        <a href="individualrecipe2.html">Here is a stock write up for a short description of a recipe. Click here for more.</a>
+    </div>
+    <div id="recipeText4">
+        <a href=""> Here is a stock write up for a short description of a recipe. Click here for more.</a>
+    </div>
+    <div id="recipeText5">
+        <a href="">Here is a stock write up for a short description of a recipe. Click here for more.</a>
+    </div>
+    <div id="recipeText6">
+        <a href=""> Here is a stock write up for a short description of a recipe. CLick here for more.</a>
+    </div>
+
+
+</body>
+</html>

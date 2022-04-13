@@ -1,0 +1,222 @@
+<html>
+    <head>
+        <style>
+            .title {
+                background: white;
+                width: 702px;
+                position: absolute;
+                left: 358px;
+                top: 140px;
+                border-radius: 10%;
+            }
+            .titleText {
+                font-size: 100px;
+                font-family: "Arial", sans-serif;
+                color: red;
+                background: white; 
+                text-align: center;
+            }
+            .landPage {
+                position: absolute;
+                top: 255px;
+                left: 25%;
+            }
+            .landImg {
+                width: 250%;
+                height: 250%;
+            }
+            .logo {
+                height: 90px;
+                width: 120px;
+                position: absolute;
+                top: 15px;
+                left: 30px;
+            }
+            body {
+                background-color: 313639;
+            }
+            .topnav {
+                overflow: hidden;
+                background-color: 313639;
+                position: relative;
+                top: 15px; 
+                right: 30px;
+            }
+            .topnav a {
+                float: right;
+                color:white;
+                text-align: center;
+                right: 14px;
+                padding: 14px 20px 14px;
+                text-decoration: none;
+                font-size: 20px;
+                font-family: "Arial", sans-serif;
+            }
+            .topnav a:hover {
+                background-color: red;
+                color:white;
+            }
+            .topnav a.active {
+                background-color: 313639;
+                color: red;
+            }
+            ::-webkit-scrollbar {
+                width: 10px;
+            }
+            ::-webkit-scrollbar-track {
+                background: #f1f1f1; 
+            }
+            ::-webkit-scrollbar-thumb {
+                background: #888; 
+            }
+            ::-webkit-scrollbar-thumb:hover {
+                background: red; 
+            }
+            #header1 {
+                top: 800px;
+                position: absolute;
+                left: 550px;
+            }
+            #headerText1 {
+                text-align: center;
+                color: white;
+                font-family: "Arial", sans-serif;
+                font-size: 50px;
+            }
+            #explain1 {
+                position: absolute;
+                top: 900px;
+                left: 100px;
+                width: 400px;
+            }
+            #explaintext1 {
+                color: white;
+                font-family: "Arial", sans-serif;
+                font-size: 20px;
+                line-height: 1.5;
+                padding-bottom: 100px;
+            }
+            .tab {
+                display: inline-block;
+                margin-left: 40px;
+            }
+            #container {
+                position: absolute;
+                width: 300px;
+                top: 950px;
+                right: 500px; 
+            }
+            #image {
+                display: block;
+                width: 100%;
+                height: auto;
+                border-radius: 10%;
+            }
+            #overlay {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 100%;
+                width: 100%;
+                opacity: 0;
+                transition: .5s ease;
+                background-color: white;
+                border-radius: 10%;
+            }
+            #container:hover #overlay {
+                opacity: 1;
+            }
+            #text {
+                color:red;
+                font-size: 20px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -webkit-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+                text-align: center;
+                font-family: "Arial", sans-serif;
+            }
+            #container2 {
+                position: absolute;
+                width: 300px;
+                top: 950px;
+                right: 100px; 
+            }
+            #image2 {
+                display: block;
+                width: 100%;
+                height: auto;
+                border-radius: 10%;
+            }
+            #overlay2 {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 100%;
+                width: 100%;
+                opacity: 0;
+                transition: .5s ease;
+                background-color: white;
+                border-radius: 10%;
+            }
+            #container2:hover #overlay2 {
+                opacity: 1;
+            }
+            #text2 {
+                color:red;
+                font-size: 20px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -webkit-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+                text-align: center;
+                font-family: "Arial", sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="topnav">
+            <a href="groceryList.html">Grocery List</a>
+            <a href="">Challenges</a>
+            <a href="recipes.html">Recipes</a>
+            <a class="active" href="project.html">Home</a>
+        </div>
+
+        <div class="navbarImg"></div>
+            <img class="logo" src="chile-black.png" alt="Logo"> <!--The logo in the top left corner of the page-->
+        </div>
+
+        <div class="landPage">
+            <img class="landImg" src="chile-white.png" alt="Chille Pepper"> <!--The large image in the middle of the page-->
+        </div>
+        <div class="title">
+            <header class="titleText">Spice!</header>
+        </div>
+        <div id="header1">
+            <header id="headerText1">Korean Spice!</header>
+        </div>
+        <div id="explain1">
+            <a id="explaintext1"><span class="tab"></span>Text explaining a specific cuisine and how it relates to spicy food. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a>
+        </div>
+        <div id="container">
+            <img src="kimchi.jpeg" alt="Kimchi" id="image">
+            <div id="overlay">
+              <a id="text" href="individualrecipe.html">Kimchi</a>
+            </div>
+        </div>
+        <div id="container2">
+            <img src="tteokbokki.jpeg" alt="Kimchi" id="image2">
+            <div id="overlay2">
+              <a id="text2" href="individualrecipe2.html">Tteokbokki</a>
+            </div>
+        </div>
+    </body>
+</html>
